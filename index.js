@@ -106,3 +106,10 @@ client.on("interactionCreate", async (interaction) => {
   await channel.send(`Welcome ${interaction.user}, support will assist you shortly.`);
   await interaction.reply({ content: `Ticket created: ${channel}`, ephemeral: true });
 });
+client.on("messageCreate", async (message) => {
+  console.log("Message received:", message.content);
+
+  if (message.content === "!test") {
+    await message.reply("Bot is reading messages.");
+  }
+});
